@@ -1,0 +1,127 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+ 
+namespace ConsoleApplication
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //ax^2+bx+с
+            //D=b^2-4ac
+ 
+            new Solution(1,1,1).count();
+            Console.ReadKey(); 
+            
+        }
+    }
+    class Solution
+    {
+        private double a;
+        private double b;
+        private double c;
+        private double D;
+        private double x1;
+        private double x2;
+        public Solution(double a, double b, double c)
+        {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
+        public void count()
+        {
+           D = Math.Pow(b, 2) - 4 * a * c;
+           if (a == 0)
+                {
+                    Console.WriteLine("Уравнение не является квадратным так как a = 0");
+                    System.Environment.Exit(0);
+                }
+            if (D < 0)
+                {
+                    Console.WriteLine("Дискриминант меньше нуля. Корней нет.");
+                    System.Environment.Exit(0);
+                }
+           if (D > 0 || D == 0)
+           {
+               x1 = (-b + Math.Sqrt(D)) / (2 * a);
+               x2 = (-b - Math.Sqrt(D)) / (2 * a);
+               Console.WriteLine("x1= {0}\n x2= {1}", x1, x2);
+               Console.ReadKey();
+ 
+           }
+ 
+           
+          
+           
+        }
+ 
+       
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+ 
+class Program {
+ public static int Main() {
+  Console.Write("Введите число : ");
+  int num = int.Parse(Console.ReadLine());
+  int factorial=1;
+  for(int i=1; i<=num; i++) {
+   factorial*=i;
+   if(i==num) {
+    Console.Write("{0}", i);
+   }
+   else {
+    Console.Write("{0} * ", i);
+   }
+  }
+  Console.Write(" = {0}", factorial);
+  Console.ReadKey();
+  return 0;
+ }
+}
+
+class Program
+{
+static long F(int n) //рекурсивный метод
+{
+if (n==0 || n==1)
+return 1; //нерекурсивная ветвь
+else return n*F(n-1); //шаг рекурсии - повторный вызов метода с другим параметром
+}
+static void Main()
+{
+Console.Write("n=");
+int n =int.Parse( Console.ReadLine());
+long f=F(n); //нерекурсивный вызов метода F
+Console.WriteLine("{0}!={1}",n, f);
+}
+}
+
+
+
+
+for(int i = 0; i < amnTilesOnScreen; i++)
+        {
+            SpawnTile();
+        }
